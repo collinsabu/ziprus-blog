@@ -13,7 +13,7 @@ export default function Impact() {
   return (
     <section className=" bg-base_color poppins mb-10 sm:mb-16 mt-10">
       <div className="banner relative ">
-        <Image class="img-container" src={banner} />
+        <Image class="img-container" src={banner} alt="donation" />
         <div class="overlay"></div>
         <div className="absolute top-40  left-16">
           <h4 className="text-3xl font-semibold text-white tracking-wides mb-2 ">
@@ -91,7 +91,7 @@ export default function Impact() {
               <h4 className="text-xl font-semibold">Our Vision for the Future</h4>
 
               <p class="text-sm font-extralight leading-loose">
-                Our "Reaching Arm to Africa" initiative is guided by our core
+                Our &quot;Reaching Arm to Africa&quot; initiative is guided by our core
                 values of compassion, integrity, and responsibility. As we move
                 forward, we envision a future where Ziprus Chemical not only
                 thrives but also plays a pivotal role in fostering positive
@@ -116,13 +116,13 @@ export default function Impact() {
 
           <div className="sm:flex pb-10 pt-20 gap-5">
             <div className="sm:w-1/3 mb-4 sm:mb-0">
-              <Image src={img1} />
+              <Image src={img1}  alt="charity donation"/>
             </div>
             <div className="sm:w-1/3 mb-4 sm:mb-0">
-              <Image src={img2} />
+              <Image src={img2} alt="charity donation" />
             </div>
             <div className="sm:w-1/3">
-              <Image src={img3} />
+              <Image src={img3}  alt="charity donation"/>
             </div>
           </div>
         </div>

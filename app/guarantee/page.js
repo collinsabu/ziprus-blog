@@ -17,7 +17,7 @@ export default function Gaurantee() {
             from the moment raw materials are sourced. Our state-of-the-art
             facilities and expert team ensure that every step of the production
             process is monitored and optimized to meet the highest industry
-            standards. Whether it's our renowned calcium products or any of our
+            standards. Whether it&apos;s our renowned calcium products or any of our
             other solid minerals, you can trust that what you receive is of the
             utmost quality.
             <strong>Unparalleled Purity</strong>
@@ -25,7 +25,7 @@ export default function Gaurantee() {
             Our calcium and other solid minerals are processed with precision to
             ensure they meet the specific needs of your industry. We guarantee
             that our products are free from contaminants and impurities, giving
-            you the peace of mind that comes with knowing you're using the best
+            you the peace of mind that comes with knowing you&apos;re using the best
             materials available on the market.
           </p>
           <p className="text-sm font-extralight leading-loose">

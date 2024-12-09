@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
@@ -13,7 +13,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  async function fetchUser() {
+  const fetchUser = useCallback(async () => {
     if (!session?.user?._id) return; // Ensure we fetch only if the user is logged in
     try {
       const res = await fetch(`/api/user/${session.user._id}`); // Replace localhost with your production URL if necessary
@@ -22,11 +22,11 @@ const Navbar = () => {
     } catch (error) {
       console.error("Error fetching user data:", error);
     }
-  }
+  }, [session?.user?._id]);
 
   useEffect(() => {
     fetchUser();
-  }, [session?.user?._id]);
+  }, [fetchUser]); // Corrected useEffect dependency
 
   return (
     <nav className="bg-base_color py-4 px-4 sm:px-10">

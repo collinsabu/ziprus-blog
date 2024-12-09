@@ -37,7 +37,7 @@ export default function CareerPage() {
           Explore Careers at Ziprus Chemicals
         </h1>
         <p className="text-gray-600 text-lg mb-6">
-          We're always looking for talented individuals to join our team. Visit
+          We&apos;re always looking for talented individuals to join our team. Visit
           our official careers page to explore current job openings and apply.
         </p>
         <a

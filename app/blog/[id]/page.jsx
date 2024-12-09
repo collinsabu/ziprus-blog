@@ -80,7 +80,7 @@ const BlogDetails = ({ params }) => {
 
   useEffect(() => {
     fetchBlog();
-  }, []);
+  }, );
 
   const timeStr = blogDetails?.createdAt;
   const time = moment(timeStr);
