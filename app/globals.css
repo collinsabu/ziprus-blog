@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-secondaryColor text-whiteColor;
+    @apply text-whiteColor;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -40,4 +40,10 @@
   .btn {
     @apply bg-primaryColor text-white px-5 py-2 rounded-lg hover:opacity-90;
   }
+}
+
+/* ===================================== */
+
+.container {
+  max-width: 1200px;
 }

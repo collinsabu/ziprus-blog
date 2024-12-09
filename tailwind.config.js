@@ -18,6 +18,9 @@ module.exports = {
         secondaryColor: "#121d1e",
         paragraphColor: "#888",
         whiteColor: "#d3d3d3",
+        base_color: '#032C26',
+        base_two: '#035145',
+        base_text: '#0CC76D'
       }
     },
     container: {
