@@ -60,7 +60,7 @@ const SignupForm = () => {
         password,
       };
 
-      const response = await fetch("http://localhost:3000/api/signup", {
+      const response = await fetch("https://ziprus-blog.vercel.app/api/signup", {
         headers: {
           "Content-Type": "application/json",
         },
