@@ -66,7 +66,7 @@ const BlogDetails = ({ params }) => {
   async function fetchBlog() {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/blog/${params.id}`
+        `https://ziprus-blog.vercel.app/api/blog/${params.id}`
       );
       const blog = await response.json();
       setBlogDetails(blog);
@@ -164,7 +164,7 @@ const BlogDetails = ({ params }) => {
       };
 
       const response = await fetch(
-        `http://localhost:3000/api/blog/${params.id}/comment`,
+        `https://ziprus-blog.vercel.app/api/blog/${params.id}/comment`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -195,7 +195,7 @@ const BlogDetails = ({ params }) => {
   const handleDeleteComment = async(commentId) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/api/blog/${params.id}/comment/${commentId}`,
+        `https://ziprus-blog.vercel.app/api/blog/${params.id}/comment/${commentId}`,
         {
           headers: {
             "Content-Type": "application/json",
