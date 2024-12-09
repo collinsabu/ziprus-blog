@@ -40,7 +40,7 @@ export default function Partnership() {
     <h4>Why Partner with Us?</h4>
 
     <p class="text-sm font-extralight leading-loose">
-        As a leading producer of high-quality solid minerals in Nigeria, we offer unique opportunities for collaboration. Whether you're looking to expand your supply chain, explore new markets, or develop innovative solutions within the industry, Ziprus Chemical is ready to partner with you.
+        As a leading producer of high-quality solid minerals in Nigeria, we offer unique opportunities for collaboration. Whether you&apos;re looking to expand your supply chain, explore new markets, or develop innovative solutions within the industry, Ziprus Chemical is ready to partner with you.
     </p>
 
     <h4>Our Commitment to Partners</h4>
@@ -84,7 +84,7 @@ export default function Partnership() {
     </p>
 
     <p class="text-sm font-extralight leading-loose">
-        <strong>Corporate Social Responsibility Initiatives:</strong> Join us in our efforts to give back to the community through our "Reaching Arm to Africa" initiatives and other CSR projects.
+        <strong>Corporate Social Responsibility Initiatives:</strong> Join us in our efforts to give back to the community through our &quot;Reaching Arm to Africa&quot; initiatives and other CSR projects.
     </p>
 
     <h4>Let’s Work Together</h4>

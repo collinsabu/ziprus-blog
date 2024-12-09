@@ -42,11 +42,11 @@ export default function Testimonial() {
     <h4 className=" text-xl mb-6">Testimonial</h4>
 
     <p class="text-sm font-extralight leading-loose">
-        "As a long-standing partner of Ziprus Chemical, I can confidently say that their products have consistently exceeded our expectations. At Agro Feed, we rely on high-quality minerals for our animal feed production, and Ziprus Chemical has been our go-to supplier for years. Their calcium and other minerals are of exceptional quality, which has significantly contributed to the efficiency and effectiveness of our feed formulations.
+        &quot;As a long-standing partner of Ziprus Chemical, I can confidently say that their products have consistently exceeded our expectations. At Agro Feed, we rely on high-quality minerals for our animal feed production, and Ziprus Chemical has been our go-to supplier for years. Their calcium and other minerals are of exceptional quality, which has significantly contributed to the efficiency and effectiveness of our feed formulations.
     </p>
 
     <p class="text-sm font-extralight leading-loose">
-        Beyond the products, their customer service is outstanding. The team at Ziprus Chemical is always responsive, professional, and committed to ensuring timely deliveries, even when unexpected challenges arise. Their dedication to maintaining high standards in both product quality and service has made a real difference to our business. I highly recommend Ziprus Chemical to any company seeking reliable and top-grade mineral supplies."
+        Beyond the products, their customer service is outstanding. The team at Ziprus Chemical is always responsive, professional, and committed to ensuring timely deliveries, even when unexpected challenges arise. Their dedication to maintaining high standards in both product quality and service has made a real difference to our business. I highly recommend Ziprus Chemical to any company seeking reliable and top-grade mineral supplies.&quot;
     </p>
 
     <p class="text-sm font-semibold leading-loose text-green-500">

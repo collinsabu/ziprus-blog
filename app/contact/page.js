@@ -41,7 +41,7 @@ export default function Contact() {
           Get in Touch
         </h1>
         <p className="text-white sm:text-lg">
-          We'd love to hear from you! Reach out to us via email, phone, or visit
+          We&apos;d love to hear from you! Reach out to us via email, phone, or visit
           our location.
         </p>
       </div>
