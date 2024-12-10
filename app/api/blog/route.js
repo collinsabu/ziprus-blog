@@ -9,45 +9,51 @@ export async function POST(req) {
   await connect();
 
   const accessToken = req.headers.get("authorization");
-  const token = accessToken.split(" ")[1];
+  const token = accessToken ? accessToken.split(" ")[1] : null;
 
   const decodedToken = verifyJwtToken(token);
 
   if (!accessToken || !decodedToken) {
     return new Response(
-      JSON.stringify({ error: "unauthorized (wrong or expired token" }),
+      JSON.stringify({ error: "Unauthorized (wrong or expired token)" }),
       { status: 403 }
     );
   }
 
   try {
     const body = await req.json();
-    const newblog = await Blog.create(body);
+    const newBlog = await Blog.create(body);
 
-    return NextResponse.json(newblog, { status: 201 });
+    return NextResponse.json(newBlog, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ message: "POST error (create blog)" });
+    console.error("POST error:", error);
+    return NextResponse.json({ message: "POST error (create blog)" }, { status: 500 });
   }
 }
 
 export async function GET(req) {
   await connect();
 
+  const url = new URL(req.url);
+  const page = parseInt(url.searchParams.get("page")) || 1;
+  const limit = parseInt(url.searchParams.get("limit")) || 10;
+  const skip = (page - 1) * limit;
+
   try {
     const blogs = await Blog.find({})
-      .populate({
-        path: "authorId",
-        select: "-password",
-      })
-      .sort({ createdAt: -1 });
+      .populate({ path: "authorId", select: "-password" })
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit);
 
-      return NextResponse.json(blogs);
+    const total = await Blog.countDocuments();
+
+    return NextResponse.json({ blogs, total, page, limit });
   } catch (error) {
+    console.error("GET error:", error);
     return NextResponse.json(
-      { message: "GET error" },
-      {
-        status: 500,
-      }
+      { message: "Failed to fetch blogs", error: error.message },
+      { status: 500 }
     );
   }
 }
