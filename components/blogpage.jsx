@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { AiTwotoneCalendar } from "react-icons/ai";
+import { FaFacebook, FaTwitter, FaLinkedin, FaShareAlt } from "react-icons/fa";
 import moment from "moment";
 import demoImage from "@/public/img/demo_image.jpg";
 
@@ -43,6 +44,21 @@ const BlogPage = () => {
     return () => controller.abort();
   }, []);
 
+  const handleShare = (blog) => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: blog.title,
+          text: blog.category,
+          url: `https://ziprus-blog.vercel.app/blog/${blog._id}`,
+        })
+        .then(() => console.log("Blog shared successfully"))
+        .catch((err) => console.error("Error sharing the blog:", err));
+    } else {
+      alert("Sharing is not supported on this browser.");
+    }
+  };
+
   const renderBlogDetailsOnImage = (blog) => {
     const timeStr = blog?.createdAt;
     const time = moment(timeStr);
@@ -56,6 +72,13 @@ const BlogPage = () => {
           <AiTwotoneCalendar />
           <span className="ml-2">{formattedTime}</span>
         </div>
+        <button
+          className="mt-2 flex items-center bg-blue-600 hover:bg-blue-700 text-white py-1 px-3 rounded text-sm"
+          onClick={() => handleShare(blog)}
+        >
+          <FaShareAlt className="mr-2" />
+          Share
+        </button>
       </div>
     );
   };
@@ -64,7 +87,10 @@ const BlogPage = () => {
     <>
       <Head>
         <title>Blogs - Latest Updates</title>
-        <meta name="description" content="Explore the latest blogs and updates on various topics. Stay informed with our curated articles." />
+        <meta
+          name="description"
+          content="Explore the latest blogs and updates on various topics. Stay informed with our curated articles."
+        />
         <meta name="keywords" content="blogs, articles, updates, news, technology" />
         <meta name="author" content="Ziprus Blog" />
       </Head>
@@ -72,9 +98,7 @@ const BlogPage = () => {
       <div className="container mx-auto px-4 py-8">
         {loading && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-            {/* Skeleton for Main Blog */}
             <div className="relative h-[400px] md:h-[500px] col-span-2 bg-gray-200 rounded-lg animate-pulse"></div>
-            {/* Skeleton for Side Blogs */}
             <div className="flex flex-col gap-6">
               {[1, 2].map((_, index) => (
                 <div
@@ -90,7 +114,6 @@ const BlogPage = () => {
 
         {!loading && !error && blogs.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-            {/* Main Blog Post */}
             <div className="relative h-[400px] md:h-[500px] col-span-2">
               <Link href={`/blog/${blogs[0]?._id}`}>
                 <div className="relative h-full w-full">
@@ -106,7 +129,6 @@ const BlogPage = () => {
               </Link>
             </div>
 
-            {/* Side Blog Posts */}
             <div className="flex flex-col gap-6">
               {blogs.slice(1, 3).map((blog) => (
                 <div key={blog._id} className="relative h-[190px] md:h-[240px]">
@@ -128,14 +150,6 @@ const BlogPage = () => {
           </div>
         )}
       </div>
-
-      <style jsx>{`
-        @media (max-width: 640px) {
-          .relative.h-[190px] {
-            height: 300px; /* Ensuring uniform image sizes on mobile */
-          }
-        }
-      `}</style>
     </>
   );
 };
