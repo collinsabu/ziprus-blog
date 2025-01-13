@@ -15,10 +15,10 @@ const PopularBlogs = () => {
     const controller = new AbortController();
     const fetchBlogs = async () => {
       try {
-        setLoading(true);
         const response = await fetch("/api/blog", {
           signal: controller.signal,
         });
+        setLoading(true);
         if (!response.ok) {
           throw new Error(`Error: ${response.status} ${response.statusText}`);
         }
