@@ -16,7 +16,7 @@ const PopularBlogs = () => {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
-        const response = await fetch("https://ziprus-blog.vercel.app/api/blog", {
+        const response = await fetch("/api/blog", {
           signal: controller.signal,
         });
         if (!response.ok) {

@@ -15,7 +15,7 @@ const BlogPage = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("https://ziprus-blog.vercel.app/api/blog");
+        const response = await fetch("/api/blog");
         if (!response.ok) {
           throw new Error("Failed to fetch blogs.");
         }
